@@ -1,0 +1,649 @@
+body {
+    margin: 0;
+    background: lightgray;
+}
+
+header {
+    background-image: url(Imagens/ella-olsson-C1Q3qOTlegg-unsplash.jpg);
+    width: auto;
+    height: 350px;
+    margin-top: auto;
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid transparent;
+    box-shadow: 0 20px 50px rgba(117, 83, 83, 0.4);
+    
+}
+
+/* Botões do Menu */
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background: #262626;
+    width: 250px;
+    height: 100%;
+    transition: .3s;
+    
+}
+
+.active {
+    left: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 20px 10px;
+    
+}
+
+.sidebar ul li {
+    list-style: none;
+}
+
+ul li a{
+    padding: 10px 20px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+.sidebar-btn {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: rgba(239, 131, 152, 0.64);
+    border: none;
+    outline: none;
+}
+
+.sidebar-btn span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background: #262626;
+    position: absolute;
+    top: 24px;
+    transition: .3s;
+    
+}
+
+.sidebar-btn span:before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #262626;
+    transition: .3s;
+
+}
+
+.sidebar-btn span:after{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #262626;
+    transition: .3s;
+}
+
+.sidebar-btn.toggle span{
+    background: transparent;
+}
+
+.sidebar-btn.toggle span:before{
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.sidebar-btn.toggle span:after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Img do LOGO */
+.logo {
+    margin-top: 15px;
+    text-align: center;
+    vertical-align: middle;
+    
+    
+}
+.logo h2{
+    color: #124512;
+    font-family: arial, sans-serif;
+    font-variant: small-caps;
+    font-size: 20px;
+    display: block;
+    
+}
+
+@media screen and (max-width: 500px){
+    .logo h2{
+        color: #124512;
+        margin: 10px;
+        font-size: 3.5vh;
+        font-family: arial, sans-serif;
+        font-variant: small-caps;
+        text-shadow: 1px 1px white;
+        display: block;
+    }
+    .logo img{
+        margin: auto;
+        width: 90px;
+        height: auto;
+        display: block;
+        
+    }
+
+}
+.logo img{
+    margin: auto;
+    width: 250px;
+    height: auto;
+    display: block;
+    
+}
+
+main {
+    margin: auto;
+    max-width: 75vw; 
+}
+
+/* Social media bar */
+
+.icon-bar {
+    position: fixed;
+    top: 60%;
+    right: 0%;
+    -webkit-transform: translateY(-50%, -50%);
+    -ms-transform: translateY(-50%, -50%);
+    transform: translateY(-50%, -50%);
+  }
+  
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .icon-bar a:hover {
+    background-color: #000;
+  }
+
+  .instagram {
+      background: rgb(212, 19, 93);
+      color: white;
+  }
+
+  .whatsapp {
+      background: green;
+      color: white;
+  }
+
+/* Cards */
+
+ .container img {
+    width: 100px;
+    filter: brightness(0) invert(1);
+}
+
+.container {
+   
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    justify-items: center;
+    grid-gap: 1em;
+    grid-row-gap: 1px;
+   
+    
+}
+
+@media screen and (max-width:750px){
+    .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    justify-items: center;
+    grid-gap: 1em;
+    grid-row-gap: 1px;
+    }
+}
+.container .card .face {
+    width: 320px;
+    height: 200px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.container .card .face.face1 {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flexbox;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #1e5f1e;
+    z-index: 1;
+    -webkit-transform: translateY(100px);
+        -ms-transform: translateY(100px);
+            transform: translateY(100px);
+}
+
+.container .card:hover .face.face1 {
+    transform: translateY(0);
+    background: #ff0057;
+}
+
+.container .card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card .face.face1 .content h3 {
+    color: #fff;
+    text-align: center;
+}
+
+.container .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.container .card .face.face2 {
+    position: relative;
+    background: #fff;
+    padding: 5px;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+    justify-content: right;
+    align-items: middle;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2 {
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.btn-crd {
+    padding: 2px;
+    color:rgb(204, 25, 55);
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+    
+    
+}
+
+.btn-insta{
+    padding: 2px;
+    color: rgb(204, 25, 55);
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+        
+}
+
+.content-payment {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.content-payment img{
+    width:21%;
+    filter: none;
+}
+
+
+/* Card Instagram Feed */
+
+.insta-card {
+    margin: 30px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: #1e5f1e;
+    font-size: 2em;
+    
+}
+
+.instagram-feed { 
+    margin-top: 30px;    
+    box-shadow: 0 20px 50px rgba(117, 83, 83, 0.4);
+}
+
+
+
+
+/* Card box section */
+
+.card-box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-end;
+    width: 100%;
+    height: 580px;
+    margin-top: 30px;
+    background: #66b58e;
+    box-shadow: 0 20px 50px rgba(117, 83, 83, 0.4);
+}
+
+
+.imgbox img{
+    position: relative;
+    max-width: 100%;
+    left: -50px;
+}
+@media only screen and (max-width: 600px){
+    .imgbox img{
+        width: 0;
+    }
+    
+}
+
+.details {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+      
+}
+
+.details h2 {
+    margin-top: 20px;
+    padding: 0;
+    font-size: 2.5em;
+    line-height: 0.8em;
+    color: white;
+}
+
+.details p {
+    max-width: 80vh;
+    color: #fff;
+    text-align: justify;
+
+    margin-right: 20px;
+    padding: 20px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+
+/* Cards-Cardapio */
+.Card-menu {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.Card-menu h1{
+    color:#1e5f1e;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding: 20px;
+    
+}
+
+.swiper-container {
+    width: 100%;
+    display: flexbox;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+
+  .swiper-slide img{
+      width: 100%;
+  }
+
+/* Cardapio testimonial */
+
+.coment{
+    margin-top: 100px;
+}
+.coment1 {
+    margin: auto;
+    padding: 20px;
+    background: #f2f2f2;
+     text-align: center;
+    
+}
+
+.coment1 h2{
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.comentario {
+    height: 100px;
+    width: 70%;
+}
+
+.c-container {
+    
+    width: auto;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow: hidden;
+    
+}
+
+.c-container .Box {
+    
+  position: relative;
+    padding: 80px 40px 40px;
+    transition: 0.5s;
+    text-align: center;
+    align-content: center;
+    background: #f2f2f2;    
+    
+}
+
+.c-container .Box:hover {
+    
+    background: #ff0057;
+    
+ 
+}
+
+.c-container .Box p {
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+}
+
+
+.c-container .Box h4 {
+    
+     margin: 20px 0 0;
+    padding: 0;
+    transition: 0.5s;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+
+.c-container .Box h4 span {
+    
+    font-weight: 600;
+    font-size: 14px;
+    color: #c5c5c5;
+    transition: 0.5s;
+    
+}
+
+
+.c-container .Box:hover p,
+.c-container .Box:hover h4, .c-container .Box:hover h4 span
+    
+{
+    
+color: #fff;
+    
+}
+
+.c-container .Box .imgBox {
+    
+    position: absolute;
+    top: -60px;
+    left: 50px;
+    transform: translate(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.c-container .Box:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: url(Imagens/left-quote.png);
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.c-container .Box:hover:before {
+    
+    transform: translateY(-60px);
+    opacity: 1;
+    
+      
+}
+
+.c-container .Box:after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    background: url(Imagens/left-quote.png);
+    background-size: cover;
+    opacity: 0.05;
+    pointer-events: none;
+    transition: 0.5s;
+    transform: rotate(180deg) translateY(0px);
+}
+
+.c-container .Box:hover:after {
+    
+    transform: rotate(180deg) translateY(-60px);
+    opacity: 1;
+     
+}
+
+@media (max-width: 700px) {
+    
+    .c-container .Box {
+        margin-top: 10px;
+        width: 120px;
+    }
+    
+
+    
+}
+
+/* Contatos */
+.coment2 {
+    margin: auto;
+    margin-top: 20px;
+    background: #1e5f1e;
+    padding: 80px 0;
+    text-align: center;
+    
+    
+}
+
+.coment2 h2{
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: white;
+}
+
+.coment2 p, a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+.email {
+ max-width: 800px;
+ margin: auto;
+    align-items: center;
+    color: white;
+}
+
+.email textarea{
+     height: 200px;
+    width: 90%;
+    
+   
+}
+
+.rodape {
+    margin-top: 30px;
+    background-color: #1e5f1e;
+    height: 80px;
+    color: white;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    line-height: 80px;
+}

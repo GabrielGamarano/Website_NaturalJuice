@@ -1,0 +1,32 @@
+<form method='POST' action='comment.php'>
+                    <label for='FirstName'>Nome</label>
+                    <input type='text' name='FirstName' placeholder='Seu Nome..' style='margin: 15px;'>
+                    <label for='LastName'>Sobrenome</label>
+                    <input type='text' name='LastName' placeholder='Seu Sobrenome..' style='margin: 15px;'>
+                    <textarea class="comentario" name="comentario" placeholder="Escreva..."></textarea>
+                    <br><br>
+                    <input type='submit' value='Enviar'>
+                   </form>
+
+<?php 
+                 $sql = "SELECT * FROM commentary LIMIT 5";
+                 $result = mysqli_query($conn,$sql);
+                 if (mysqli_num_rows($result) > 0) {
+                     while ($row = mysqli_fetch_assoc($result)) {
+                       echo "<div class='c-box'>";  
+                      
+                         echo "<p>";
+                         echo $row ['Message'];
+                         echo "</p>";
+                         echo "<h3>";
+                         echo "Autor: " . $row ['FirstName'] . "<br>";
+                         echo $row ['LastName'];
+                         echo "<br>";
+                         echo "<h3>";
+                       echo "</div>";
+                     }
+                 }
+                 else {
+                     echo "There are no comments to show!";
+                 }
+                 ?>
